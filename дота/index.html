@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Предложение</title>
+
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #1e1e2e;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        .box {
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 40px;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        #yes {
+            background: #4caf50;
+            color: white;
+        }
+
+        #no {
+            background: #f44336;
+            color: white;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+        <h1>Пойдём в Доту? 🎮</h1>
+
+        <button id="yes">Да</button>
+        <button id="no">Нет</button>
+    </div>
+
+    <script>
+        const noButton = document.getElementById("no");
+
+        noButton.addEventListener("mouseover", () => {
+            const maxX = window.innerWidth - noButton.offsetWidth;
+            const maxY = window.innerHeight - noButton.offsetHeight;
+
+            const randomX = Math.random() * maxX;
+            const randomY = Math.random() * maxY;
+
+            noButton.style.left = randomX + "px";
+            noButton.style.top = randomY + "px";
+        });
+    </script>
+
+</body>
+</html>
